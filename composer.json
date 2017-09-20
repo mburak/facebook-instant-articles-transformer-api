@@ -1,0 +1,34 @@
+{
+    "require": {
+        "facebook/facebook-instant-articles-sdk-php": "^1.6",
+        "guzzlehttp/guzzle": "^6.3",
+        "paragonie/random_compat": "^2.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^4.8"
+    },
+    "autoload": {
+        "psr-4": {
+            "Facebook\\InstantArticlesTransformer\\": "src/Facebook/InstantArticlesTransformer/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Facebook\\InstantArticlesTransformer\\": "tests/Facebook/InstantArticlesTransformer/"
+        }
+    },
+    "scripts": {
+        "all": [
+            "@cs",
+            "@test"
+        ],
+        "cs": [
+            "composer install",
+            "phpcbf --standard=phpcs.xml -p || phpcs --standard=phpcs.xml -p"
+        ],
+        "test": [
+            "composer install",
+            "phpunit"
+        ]
+    }
+}
